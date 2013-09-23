@@ -1,0 +1,31 @@
+<%- if @parking_registration.errors.size > 0 -%>
+  <ul class="errors">
+    <%- @parking_registration.errors.full_messages.each do |message| -%>
+      <li><%= message %></li>
+    <%- end -%>
+  </ul>
+<%- end -%>
+
+<%= form_for @parking_registration do |f| %>
+  <div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :spot_number %>
+    <%= f.text_field :spot_number %>
+  </div>
+
+  <%= f.submit 'Register' %>
+<%- end -%>
